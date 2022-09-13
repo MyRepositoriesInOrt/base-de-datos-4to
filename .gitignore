@@ -1,0 +1,7 @@
+node_modules
+# git init (crar un repositorio local)
+# git add . (añadir todos los cambios)
+# git status (ver el estado de los cambios)
+# git commit -m "Comentario" (commit de los cambios)
+# git remote add origin "link del repositorio" (añadir el repositorio remoto)
+# git push (subir los cambios al repositorio remoto)
