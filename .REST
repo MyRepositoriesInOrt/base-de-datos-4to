@@ -1,1 +1,31 @@
-GET http://localhost:9000
+### Menu
+GET http://localhost:9000/menu
+
+### Menu con id
+GET http://localhost:9000/menu/9
+
+### Principales
+GET http://localhost:9000/principales
+
+### Postres
+GET http://localhost:9000/postres
+
+### Bebidas
+GET http://localhost:9000/bebidas
+
+### Pedido
+POST http://localhost:9000/pedido
+Content-Type: application/json
+
+{
+    "productos": [
+        {
+            "id": 1,
+            "cantidad": 3
+        },
+        {
+            "id": 2,
+            "cantidad": 1
+        }
+    ]
+}
