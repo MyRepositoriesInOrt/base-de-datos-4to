@@ -36,16 +36,12 @@ app.get('/bebidas', (req, res) => {
 
 // Ejercicio 6
 app.post('/pedido', (req, res) => {
-    const initialValue = 0;
-    const precio = arr.reduce(callback(acumulador, valorActual[, índice[, array]])[, valorInicial])
-
-    // const precios = []
-    // const cant = []
-    // req.map(item => platos.push(menu.find(item.id).precio));
-    // req.map(item => cant.push(item.cantidad));
+    const precio = req.body.productos.reduce((acc, item) =>  {
+        return acc = acc + menu.find(x => x.id==item.id).precio * item.cantidad
+    }, 0);
 
     res.json({
-        msg: 'Pedido recibido',
-        precio: precio
+        "msg": "Pedido recibido",
+        "precio": precio
     });
 });
