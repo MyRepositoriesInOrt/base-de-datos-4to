@@ -16,28 +16,28 @@ app.get('/menu', (req, res) => {
 // Ejercicio 2
 app.get('/menu/:id', (req, res) => {
     const id = req.params.id;
-    res.send(menu.find(x => x.id==id));
+    res.send(menu.find(x => x.id===id));
 });
 
 // Ejercicio 3
 app.get('/principales', (req, res) => {
-    res.send(menu.filter(x => x.tipo=='principal'));
+    res.send(menu.filter(x => x.tipo==='principal'));
 });
 
 // Ejercicio 4
 app.get('/postres', (req, res) => {
-    res.send(menu.filter(x => x.tipo=='postre'));
+    res.send(menu.filter(x => x.tipo==='postre'));
 });
 
 // Ejercicio 5
 app.get('/bebidas', (req, res) => {
-    res.send(menu.filter(x => x.tipo=='bebida'));
+    res.send(menu.filter(x => x.tipo==='bebida'));
 });
 
 // Ejercicio 6
 app.post('/pedido', (req, res) => {
     const precio = req.body.productos.reduce((acc, item) =>  {
-        return acc = acc + menu.find(x => x.id==item.id).precio * item.cantidad
+        return acc = acc + menu.find(x => x.id===item.id).precio * item.cantidad
     }, 0);
 
     res.json({
